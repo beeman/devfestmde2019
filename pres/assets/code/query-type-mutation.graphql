@@ -1,0 +1,29 @@
+mutation {
+    createPost(
+        title: "Hello world!"
+        text: "Hi!"
+    ) {
+        id title content
+    }
+}
+
+
+
+
+
+
+mutation {
+    login(
+        username: "x"
+        password: "y"
+    ) {
+        token
+        user { id username avatar }
+    }
+}
+
+
+
+
+
+

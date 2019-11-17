@@ -1,0 +1,117 @@
+mutation {
+  user0: createUser(
+    data: {
+      username: "summer"
+      password: "$2b$10$dqyYw5XovLjpmkYNiRDEWuwKaRAvLaG45fnXE5b3KTccKZcRPka2m" # "secret42"
+      email: "summer@example.com"
+      avatar: "https://imgur.com/Y4dT5W0.png"
+      name: "Summer Smith"
+      location: "Who cares..."
+      bio: "Hey!"
+      posts: {
+        create: [
+          {
+            text: "Hi! Summer here! Nice to meet you all!"
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+
+  user1: createUser(
+    data: {
+      username: "morty"
+      password: "$2b$10$dqyYw5XovLjpmkYNiRDEWuwKaRAvLaG45fnXE5b3KTccKZcRPka2m" # "secret42"
+      email: "morty@example.com"
+      avatar: "https://imgur.com/Ca4c884.png"
+      name: "Morty Smith"
+      location: "School!"
+      bio: "Hi there I'm Morty 🎉!"
+      posts: {
+        create: [
+          {
+            text: "Morty Represents! 😎"
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+
+  user2: createUser(
+    data: {
+      username: "rick"
+      password: "$2b$10$dqyYw5XovLjpmkYNiRDEWuwKaRAvLaG45fnXE5b3KTccKZcRPka2m" # "secret42"
+      email: "rick@example.com"
+      avatar: "https://imgur.com/0Ao2f63.png"
+      name: "Rick Sanchez"
+      location: "Earth C-137"
+      bio: "I am the smartest guy in all universes!"
+      posts: {
+        create: {
+          text: "Hello, I'm Rick and I love GraphQL"
+          commentCount: 2,
+          comments: {
+            create: [
+              {
+                text: "Welcome to the site Rick!!"
+                author: { connect: { username: "summer" } }
+              }
+              {
+                text: "I hope you enjoy your stay!!!"
+                author: { connect: { username: "morty" } }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ) {
+    id
+  }
+
+  user3: createUser(
+    data: {
+      username: "beth"
+      password: "$2b$10$dqyYw5XovLjpmkYNiRDEWuwKaRAvLaG45fnXE5b3KTccKZcRPka2m" # "secret42"
+      email: "beth@example.com"
+      avatar: "https://imgur.com/o28uw9C.png"
+      name: "Beth Smith"
+      location: "Earth"
+      bio: "Vetenarian"
+      posts: {
+        create: [
+          {
+            text: "I love horses!"
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+
+  user4: createUser(
+    data: {
+      username: "jerry"
+      password: "$2b$10$dqyYw5XovLjpmkYNiRDEWuwKaRAvLaG45fnXE5b3KTccKZcRPka2m" # "secret42"
+      email: "jerry@example.com"
+      avatar: "https://imgur.com/Yr4YiTi.png"
+      name: "Jerry Smith"
+      location: "Earth"
+      bio: "Husband of @beth"
+      posts: {
+        create: [
+          {
+            text: "Something with apples!"
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+}

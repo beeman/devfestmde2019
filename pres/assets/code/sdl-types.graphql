@@ -1,0 +1,75 @@
+type User {
+    id: Int!
+    username: String!
+    password: String!
+    name: String!
+    avatar: String
+    dob: Date
+}
+
+
+
+
+
+
+
+
+
+type User {
+    id: Int!
+    username: String!
+    password: String!
+    posts: [Post!]!
+}
+type Post {
+    id: Int!
+    title: String!
+    text: String!
+    author: User!
+}
+
+
+
+
+
+
+
+
+type Query {
+    hello(name: String): String!
+    uptime: Int!
+    users: [User!]!
+    user(id: String!): User!
+}
+
+
+
+
+
+
+type Mutation {
+    login(
+        username: String!
+        password: String!
+    ): User!
+    createPost(
+        title: String!
+        text: String!
+    ): Post!
+}
+
+
+
+
+
+
+
+
+
+
+type Subscription {
+    subscribeNewPosts: Post!
+    subscribePostComments(
+        postId: Int!
+    ): Comment!
+}

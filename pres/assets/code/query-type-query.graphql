@@ -1,0 +1,137 @@
+query {
+    hello
+}
+{
+  "data": {
+    "hello": "Hello world"
+  }
+}
+
+
+
+
+
+
+query {
+    hello(name: "Medellín 🇨🇴")
+}
+{
+  "data": {
+    "hello": "Hello Medellín 🇨🇴"
+  }
+}
+
+
+
+
+
+
+query {
+    users {
+        id
+        username
+    }
+}
+# Result:
+{
+  "data": {
+    "users": [
+      {"id": 1, "username": ...},
+      {"id": 2, "username": ...},
+    ]
+  }
+}
+
+
+
+query User($id: String!) {
+    user(id: $id) {
+        id username
+    }
+}
+# Variables:
+{ "id": 42 }
+# Result:
+{
+  "data": {
+    "user": {
+      "id": 42...
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+query User($id: String!) {
+    user(id: $id) {
+        id
+        username
+        posts {
+            id
+            title
+            text
+        }
+    }
+}
+# Variables:
+{ "id": 1 }
+# Result:
+{
+  "id": 1,
+  "username": "alice",
+  "posts": [
+     { "id": 1, "title": ...},
+     { "id": 2, "title": ...}
+   ]
+}
+
+
+
+query User($id: String!) {
+    user(id: $id) {
+        id
+        username
+        posts {
+            id
+            title
+            text
+            comments {
+                id
+                text
+                author {
+                    id
+                    username
+                }
+            }
+        }
+    }
+}
+# Variables:
+{ "id": 1 }
+# Result:
+{
+   "id": 1,
+   "username": "alice",
+   "posts": [{
+     "id": 1,
+     "comments": [{
+        "id": 2,
+        "author": { "id": 2 }
+      }]
+  }]
+}
+
+
+
+
+
+
+

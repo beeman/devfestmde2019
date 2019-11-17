@@ -1,0 +1,15 @@
+{
+  "name": "GraphQL Schema",
+  "schemaPath": "src/sdk/generated/graphql.schema.json",
+  "extensions": {
+    "endpoints": {
+      "GraphQL Development Endpoint": {
+        "url": "http://localhost:4200/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      }
+    }
+  }
+}

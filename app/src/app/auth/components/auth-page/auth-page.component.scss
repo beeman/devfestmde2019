@@ -1,0 +1,14 @@
+.avatar img {
+  height: 128px;
+  width: 128px;
+}
+.nav-link {
+  color: #EBEBEB;
+  background-color: #2B3E50;
+  border-color: #4E5D6C;
+}
+.nav-link.active {
+  color: #EBEBEB;
+  background-color: #4E5D6C;
+  border-color: #4E5D6C;
+}

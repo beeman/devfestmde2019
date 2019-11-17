@@ -1,0 +1,5 @@
+export enum PostActions {
+  SHOW_COMMENTS = 'SHOW_COMMENTS',
+  SHOW_LIKES = 'SHOW_LIKES',
+  SUBMIT_POST = 'SUBMIT_POST',
+}
