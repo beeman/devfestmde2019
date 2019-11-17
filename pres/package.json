@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js,.jsx .",
     "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
-    "start": "cross-env NODE_ENV=development node server.js",
+    "start": "PORT=8080 cross-env NODE_ENV=development node server.js",
     "now-start": "serve -s ./"
   },
   "author": "",

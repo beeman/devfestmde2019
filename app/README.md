@@ -1,27 +1,79 @@
-# GraphqlAngular
+# GraphQL with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.18.
+## Installation
 
-## Development server
+### Prisma
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### Install Prisma cli
 
-## Code scaffolding
+```shell script
+npm install -g prisma
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Run Prisma container in Docker
+```shell script
+docker-compose up -d
+```
 
-## Build
+##### Deploy Prisma datamodel
+```shell script
+yarn prisma:deploy
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### API
 
-## Running unit tests
+##### Go to API dir
+```shell script
+cd api
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+##### Install dependencies
+```shell script
+yarn
+```
 
-## Running end-to-end tests
+##### Run initial build
+```shell script
+yarn build
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+##### Start development server
+```shell script
+yarn start:dev
+```
 
-## Further help
+The API should run on port 3000.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Website
+
+##### Install dependencies
+
+```shell script
+yarn
+```
+
+##### Run development server
+
+```shell script
+ng serve
+```
+
+## GraphQL Codegen
+
+##### Run the generator
+
+This will generate an Angular SDK for the API in `app/src/sdk/generated` based on the queries defined in `app/src/sdk/queries`.
+
+```shell script
+yarn graphql
+```
+
+##### Run the generator in watch mode
+
+This runs the above process in watch mode, triggering generation after changes in `app/src/sdk/queries`
+
+```shell script
+yarn graphql:watch
+```
+
+
